@@ -1,28 +1,22 @@
-# Find the largest prime factor of 60085145143 
-
+# Find the largest prime factor of 600851475143
 from math import sqrt
-number = 600851475143
 
-allPrimes = []
+number = 600851475143.
+factor = int(sqrt(number))
 
-i = 3
-ifPrime = True
-while i < sqrt(number):
-    j = 2
-    while j < sqrt(i):
-        if not i % j:
-            ifPrime = False
+def isPrime(x):
+    for i in range(2, int(sqrt(x))):
+        if not x % i:
+            return False 
+    return True
+
+def isFactor(y):
+    return not (number / y ) % 1
+
+while factor > 1:
+    if isFactor(factor):
+        if isPrime(factor):
+            print(factor)
             break
-        j += 1
-    if ifPrime:
-        allPrimes.append(i)
-    ifPrime = True
-    i += 2
-
-primeFactors = []
-
-for x in allPrimes:
-    if not number % x:
-        primeFactors.append(x)
-
-print(max(primeFactors))
+    factor -= 1
+# 6857
