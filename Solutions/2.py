@@ -1,15 +1,15 @@
-# Find the sum of all the number in the Fibonacci series below 4,000,000
+# Find the sum of all the even numbers in the Fibonacci series not exceeding 4,000,000
+i = 1
+j = 1
+k = i + j
+_sum = 0
 
-fibonacci = [1,2]
-fibSum = 2
+while k <= 4000000:
+    if not k % 2:
+        _sum += k
+    i = j
+    j = k
+    k = i + j
 
-i=2
-while i <= 4000000:
-    fibonacci.append(fibonacci[i-2] + fibonacci[i-1])
-    if fibonacci[i] > 4000000:
-        break
-    if not fibonacci[i] % 2:
-        fibSum += fibonacci[i]
-    i += 1
-
-print(fibSum)
+print(_sum)
+# 4613732
