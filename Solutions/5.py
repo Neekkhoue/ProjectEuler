@@ -1,15 +1,17 @@
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
- 
-def is_divisible(input):
+def is_divisible(guess):
     i = 20
     while i > 1:
-        if input % i != 0:
+        if guess % i != 0:
             return False
         i -= 1
     return True
 
-i = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19
+primeBase = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19
+i = primeBase
 
 while is_divisible(i) == False:
-    i += 1
+    i += primeBase
+    
 print(i)
+# 232792560
