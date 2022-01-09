@@ -1,17 +1,16 @@
-# Find the largest palindrome found from the product of two 3-digit numbers
+# Find the largest palindrome that is the product of two 3-digit numbers
+factor1 = list(range(100,1000))
+factor2 = list(range(100,1000))
+palindrome = 0
 
-# Create a list of all possible products of two 3-digit numbers
-digits = range(0,9)
-product1 = range(100,1000)
-product2 = range(100,1000)
-palindromes = []
+def isPalindrome(number):
+    return str(number) == str(number)[::-1]
 
-for x in product1:
-    for y in product2:
+for x in factor1:
+    for y in factor2:
         product = x * y
-        string_product = str(product)
-        for i in digits:
-            if string_product.startswith(i) and string_product.endswith(i):
-                palindromes.append(product)
+        if isPalindrome(product) and product > palindrome:
+            palindrome = product
 
-print(palindromes)
+print(palindrome)
+# 906609
